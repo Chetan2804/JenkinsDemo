@@ -12,7 +12,7 @@ public class LoginTest {
     public void testLogin() {
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://example.com/login");
+        driver.get("https://practicetestautomation.com/practice-test-login/");
 
         LoginPage login = new LoginPage(driver);
         login.login("admin", "password");

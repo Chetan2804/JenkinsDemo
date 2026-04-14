@@ -12,9 +12,8 @@ public class LoginTest {
     @Test
     public void testLogin() {
 
-     
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
+        options.addArguments("--headless=new"); // for Jenkins
         options.addArguments("--disable-gpu");
 
         WebDriver driver = new ChromeDriver(options);
@@ -23,6 +22,15 @@ public class LoginTest {
 
         LoginPage login = new LoginPage(driver);
         login.login("student", "Password123");
+
+        
+        String currentUrl = driver.getCurrentUrl();
+
+        if (currentUrl.contains("logged-in-successfully")) {
+            System.out.println("Test Passed");
+        } else {
+            throw new RuntimeException("Test Failed");
+        }
 
         driver.quit();
     }

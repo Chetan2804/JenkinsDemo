@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-	WebDriver driver;
+    WebDriver driver;
 
     By username = By.id("username");
     By password = By.id("password");
-    By loginBtn = By.id("login");
+    By loginBtn = By.id("submit");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;

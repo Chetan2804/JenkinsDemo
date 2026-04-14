@@ -8,8 +8,10 @@ import pages.LoginPage;
 
 public class LoginTest {
 
-	public static void main(String[] args) {
-		WebDriver driver = new ChromeDriver();
+    @Test
+    public void testLogin() {
+
+        WebDriver driver = new ChromeDriver();
         driver.get("https://example.com/login");
 
         LoginPage login = new LoginPage(driver);
@@ -17,13 +19,12 @@ public class LoginTest {
 
         String title = driver.getTitle();
 
-        if(title.contains("Dashboard")) {
+        if (title.contains("Dashboard")) {
             System.out.println("Login Successful");
         } else {
             System.out.println("Login Failed");
         }
 
         driver.quit();
-	}
-
+    }
 }
